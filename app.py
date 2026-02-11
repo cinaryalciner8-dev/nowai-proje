@@ -12,7 +12,7 @@ socket.setdefaulttimeout(15)
 
 # --- API BAĞLANTISI ---
 try:
-    client = Groq(api_key="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")
+    client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 except Exception as e:
     st.error(f"Sistem Hatası: {str(e)}")
     st.stop()
@@ -177,3 +177,4 @@ if calistir:
                         <a href="{h['link']}" target="_blank" style="color:#e63946; text-decoration:none; font-weight:bold; margin-top:15px; display:inline-block;">KAYNAĞA GİT &rarr;</a>
                     </div>
                 """, unsafe_allow_html=True)
+
